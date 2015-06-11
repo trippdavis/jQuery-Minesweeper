@@ -6,12 +6,33 @@
     <script src="javascripts/jquery-2.1.4.min.js"></script>
     <script src="lib/gameView.js"></script>
     <script src="lib/game.js"></script>
-    <link rel="stylesheet" type="text/css" hrek="./stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="./stylesheet.css">
   </head>
   <body>
     <div id="game">
       <div id="grid-options">
-
+        <p>
+          <label>Number of Rows (Max 50)
+            <br>
+            <input type="text" name="num_rows" value="20">
+            <br>
+          </label>
+        </p>
+        <p>
+          <label>Number of Columns (Max 50)
+            <br>
+            <input type="text" name="num_cols" value="20">
+            <br>
+          </label>
+        </p>
+        <p>
+          <label>Number of Bombs
+            <br>
+            <input type="text" name="num_bombs" value="50">
+            <br>
+          </label>
+        </p>
+        <input type="button" name="submit" value="Start Game!">
       </div>
     </div>
   </body>
