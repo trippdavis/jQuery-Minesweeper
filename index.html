@@ -12,15 +12,17 @@
       <div id="grid"></div>
 
       <div id="game-options">
+        <h2>Game Options:</h2>
+        <h4 id="bad-choices" style="display:none">Invalid Selections</h4>
         <p>
-          <label>Number of Rows (Max 50)
+          <label>Number of Rows (Max 20)
             <br>
             <input type="text" id="num_rows" value="5">
             <br>
           </label>
         </p>
         <p>
-          <label>Number of Columns (Max 50)
+          <label>Number of Columns (Max 20)
             <br>
             <input type="text" id="num_cols" value="5">
             <br>
@@ -40,11 +42,15 @@
     <script type="text/javascript">
       $("#start-game").on("click", function (event) {
         event.preventDefault();
-        $("#game-options").hide();
         var bombs = $("#num_bombs").val();
         var rows = $("#num_rows").val();
         var cols = $("#num_cols").val();
-        window.game = Minesweeper.Game(rows, cols, bombs);
+        if (rows > 20 || cols > 20 || bombs > (rows * cols)) {
+          $("#bad-choices").css("display", "block");
+        } else {
+          $("#game-options").hide();
+          window.game = Minesweeper.Game(rows, cols, bombs);
+        }
       });
     </script>
   </body>
