@@ -4,36 +4,48 @@
     <meta charset="utf-8">
     <title>Minesweeper</title>
     <script src="javascripts/jquery-2.1.4.min.js"></script>
-    <script src="lib/gameView.js"></script>
     <script src="lib/game.js"></script>
     <link rel="stylesheet" type="text/css" href="./stylesheet.css">
   </head>
   <body>
     <div id="game">
-      <div id="grid-options">
+      <div id="grid"></div>
+
+      <div id="game-options">
         <p>
           <label>Number of Rows (Max 50)
             <br>
-            <input type="text" name="num_rows" value="20">
+            <input type="text" id="num_rows" value="5">
             <br>
           </label>
         </p>
         <p>
           <label>Number of Columns (Max 50)
             <br>
-            <input type="text" name="num_cols" value="20">
+            <input type="text" id="num_cols" value="5">
             <br>
           </label>
         </p>
         <p>
           <label>Number of Bombs
             <br>
-            <input type="text" name="num_bombs" value="50">
+            <input type="text" id="num_bombs" value="10">
             <br>
           </label>
         </p>
-        <input type="button" name="submit" value="Start Game!">
+        <input type="button" id="start-game" value="Start Game!">
       </div>
     </div>
+
+    <script type="text/javascript">
+      $("#start-game").on("click", function (event) {
+        event.preventDefault();
+        $("#game-options").hide();
+        var bombs = $("#num_bombs").val();
+        var rows = $("#num_rows").val();
+        var cols = $("#num_cols").val();
+        window.game = Minesweeper.Game(rows, cols, bombs);
+      });
+    </script>
   </body>
 </html>
