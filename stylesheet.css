@@ -25,8 +25,9 @@ body {
 
 .square {
   display: inline-block;
-  width: 30px;
-  height: 30px;
+  vertical-align: top;
+  width: 40px;
+  height: 40px;
   margin-right: 2px;
   margin-left: 2px;
 }
@@ -41,4 +42,9 @@ body {
 
 .revealed-safe {
   background: green;
+}
+
+.neighbor-bomb-count {
+  font-size: 25px;
+  margin-top: 5px;
 }
