@@ -25,9 +25,20 @@ body {
 
 .square {
   display: inline-block;
-  background: black;
   width: 30px;
   height: 30px;
   margin-right: 2px;
   margin-left: 2px;
+}
+
+.unrevealed-square {
+  background: black;
+}
+
+.revealed-bomb {
+  background: red;
+}
+
+.revealed-safe {
+  background: green;
 }
