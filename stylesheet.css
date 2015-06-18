@@ -16,6 +16,7 @@ body {
 
 #grid {
   position: relative;
+  text-align: center;
 }
 
 .row {
@@ -65,7 +66,7 @@ body {
   text-align: center;
   font-size: 25px;
   position: absolute;
-  top: 20px;
+  top: 50px;
   z-index: 2;
   width: 300px;
   margin-left: -150px;
